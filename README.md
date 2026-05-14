@@ -32,20 +32,22 @@ conda activate sam3-demo
 
 ### 2. Cài PyTorch
 
+**Nếu có GPU (CUDA 12.4 — dùng cho driver CUDA 12.4 → 12.x):**
+```bash
+conda install pytorch torchvision pytorch-cuda=12.4 -c pytorch -c nvidia -y
+```
+
 **Nếu có GPU (CUDA 11.8):**
 ```bash
 conda install pytorch torchvision pytorch-cuda=11.8 -c pytorch -c nvidia -y
-```
-
-**Nếu có GPU (CUDA 12.1):**
-```bash
-conda install pytorch torchvision pytorch-cuda=12.1 -c pytorch -c nvidia -y
 ```
 
 **Nếu chỉ có CPU (hoặc Mac M1/M2):**
 ```bash
 conda install pytorch torchvision cpuonly -c pytorch -y
 ```
+
+> Driver CUDA 12.8 (RTX 6000 Ada) → dùng `pytorch-cuda=12.4` vì PyTorch stable hỗ trợ tối đa 12.4, nhưng tương thích ngược với driver cao hơn.
 
 ### 3. Cài các thư viện còn lại
 
